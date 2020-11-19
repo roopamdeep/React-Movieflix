@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import reactRouterDom, { Route, Redirect, Switch } from "react-router-dom";
-
+import LoginForm from "./components/loginForm";
 import Movies from "./components/movies";
 import Customers from "./components/customers";
 import Rentals from "./components/rentals";
@@ -8,6 +8,7 @@ import NotFound from "./components/notFound";
 import NavBar from "./components/navbar";
 import "./App.css";
 import MovieForm from "./components/movieForm";
+
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
         <NavBar />
         <main className="container">
           <Switch>
+            <Route path="/login" component={LoginForm}></Route>
             <Route path="/movies/:id" component={MovieForm}></Route>
             <Route path="/movies" component={Movies}></Route>
             <Route path="/customers" component={Customers}></Route>
